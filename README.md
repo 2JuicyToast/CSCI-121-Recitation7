@@ -52,8 +52,17 @@ The following fields have already been declared for you:
 
 Initializes all fields. The horse's name should be set to the given parameter. Position, wins, losses, and draws should all start at 0. Create a new `Random` object and assign it to the `random` field.
 
+#### 2. `public void resetPosition()`
 
-#### 2. Getters
+Set `position` back to 0. This is called at the start of each new race. It should **not** affect any statistics.
+
+
+#### 3. `public void clearStats()`
+
+Set `wins`, `losses`, and `draws` all back to 0. This is called when starting a completely new game.
+
+
+#### 4. Getters
 
 Implement the following getter methods, each returning the corresponding field:
 
@@ -81,27 +90,17 @@ This method simulates the horse moving forward one step in the race.
 Return `true` if the horse's current position is greater than or equal to `FINISH_LINE`, and `false` otherwise.
 
 
-#### 3. `public void resetPosition()`
-
-Set `position` back to 0. This is called at the start of each new race. It should **not** affect any statistics.
-
-
-#### 4. `public void clearStats()`
-
-Set `wins`, `losses`, and `draws` all back to 0. This is called when starting a completely new game.
-
-
-#### 5. `public void recordWin()`
+#### 3. `public void recordWin()`
 
 Increment `wins` by 1.
 
 
-#### 6. `public void recordLoss()`
+#### 4. `public void recordLoss()`
 
 Increment `losses` by 1.
 
 
-#### 7. `public void recordDraw()`
+#### 5. `public void recordDraw()`
 
 Increment `draws` by 1.
 
