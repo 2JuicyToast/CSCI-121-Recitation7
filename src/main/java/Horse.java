@@ -67,21 +67,21 @@ public class Horse {
      * Increases this horse's number of wins by 1
      */
     public void recordWin()  {
-        this.wins ++;
+        this.wins += 1;
     }
 
     /**
      * Increases this horse's number of losses by 1
      */
     public void recordLoss() {
-        this.losses ++;
+        this.losses += 1;
     }
 
     /**
      * Increases this horse's number of draws by 1
      */
     public void recordDraw() {
-        this.draws ++;
+        this.draws += 1;
     }
 
     public String getName()  {
