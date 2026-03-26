@@ -29,6 +29,44 @@ public class HorseRace {
      * @return the winning horse, or null if it is a draw
      */
     public Horse race() {
-        // TODO: replace this line with your code.
+        horse1.resetPosition();
+        horse2.resetPosition();
+
+        System.out.println("--- Race Start! Finish line at position " + Horse.FINISH_LINE + " ---");
+        System.out.println();
+
+        int round = 1;
+
+        while (!horse1.hasFinished() && !horse2.hasFinished()) {
+            int advanceNum1 = horse1.advance();
+            int advanceNum2 = horse2.advance();
+
+            System.out.println("Round " + round + ": "
+                    + horse1.getName() + " advances " + advanceNum1
+                    + " -> position: " + horse1.getPosition());
+            System.out.println("         "
+                    + horse2.getName() + " advances " + advanceNum2
+                    + " -> position: " + horse2.getPosition());
+            System.out.println();
+
+            round++;
+        }
+
+        if (horse1.hasFinished() && horse2.hasFinished()) { // both crossed at the same time
+            horse1.recordDraw();
+            horse2.recordDraw();
+            System.out.println("Result: Draw!");
+            return null;
+        } else if (horse1.hasFinished()) { // horse1 crossed first, and wins
+            horse1.recordWin();
+            horse2.recordLoss();
+            System.out.println("Result: " + horse1.getName() + " wins!");
+            return horse1;
+        } else { // horse2 crossed first, and wins
+            horse2.recordWin();
+            horse1.recordLoss();
+            System.out.println("Result: " + horse2.getName() + " wins!");
+            return horse2;
+        }
     }
 }
